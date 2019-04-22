@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk.utils;
+package com.tencent.mobileqq.utils;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -10,7 +10,7 @@ import android.os.Process;
 
 import java.util.List;
 
-import cos.mos.adsworksdk.init.Code;
+import com.tencent.mobileqq.init.Code;
 
 
 /**

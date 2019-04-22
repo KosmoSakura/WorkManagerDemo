@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk;
+package com.tencent.mobileqq;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -10,14 +10,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.tencent.mobileqq.utils.ULog;
+import com.tencent.mobileqq.utils.ULogSaves;
+import com.tencent.mobileqq.utils.UWork;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import cos.mos.adsworksdk.utils.ULog;
-import cos.mos.adsworksdk.utils.ULogSaves;
-import cos.mos.adsworksdk.utils.UWork;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;

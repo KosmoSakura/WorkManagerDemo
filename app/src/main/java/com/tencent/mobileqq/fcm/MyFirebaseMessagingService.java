@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk.fcm;
+package com.tencent.mobileqq.fcm;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -8,11 +8,11 @@ import android.graphics.Color;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.tencent.mobileqq.MainActivity;
+import com.tencent.mobileqq.R;
+import com.tencent.mobileqq.utils.ULog;
 
 import androidx.core.app.NotificationCompat;
-import cos.mos.adsworksdk.MainActivity;
-import cos.mos.adsworksdk.R;
-import cos.mos.adsworksdk.utils.ULog;
 
 /**
  * @Description: <p>

@@ -1,8 +1,8 @@
-package cos.mos.adsworksdk.utils;
+package com.tencent.mobileqq.utils;
 
 import java.util.Locale;
 
-import cos.mos.adsworksdk.init.App;
+import com.tencent.mobileqq.init.App;
 
 
 /**

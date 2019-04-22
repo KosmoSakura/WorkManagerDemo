@@ -1,6 +1,5 @@
-package cos.mos.adsworksdk.work;
+package com.tencent.mobileqq.utils;
 
-import android.content.Context;
 import android.os.Environment;
 
 import java.io.ByteArrayOutputStream;
@@ -9,35 +8,17 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import androidx.annotation.NonNull;
-import androidx.work.Worker;
-import androidx.work.WorkerParameters;
-import cos.mos.adsworksdk.utils.ULog;
-
 /**
  * @Description: <p>
  * @Author: Kosmos
- * @Date: 2019.04.18 21:01
+ * @Date: 2019.04.19 14:24
  * @Email: KosmoSakura@gmail.com
  */
-public class KWork extends Worker {
-    public KWork(@NonNull Context context, @NonNull WorkerParameters workerParams) {
-        super(context, workerParams);
-    }
+public class ULogSaves {
+    private static File saveFile = new File(Environment.getExternalStorageDirectory(), "WM记录.txt");
 
-    @NonNull
-    @Override
-    public Result doWork() {
-        //需要在任务中执行的业务逻辑
-        ULog.commonD("WorkManager收到回调");
-        write("WorkManager收到回调");
-        return Result.success();
-    }
-
-    private File saveFile = new File(Environment.getExternalStorageDirectory(), "WM记录.txt");
-
-    private String read() {
-        byte Buffer[] = new byte[1024];
+    private static String read() {
+        byte[] Buffer = new byte[1024];
         //得到文件输入流
         FileInputStream in = null;
         ByteArrayOutputStream outputStream = null;
@@ -72,7 +53,8 @@ public class KWork extends Worker {
         return "";
     }
 
-    private void write(String str) {
+    public static void write(String str) {
+        ULog.commonD(str);
         try {
             //新建文件
             if (!saveFile.exists()) {

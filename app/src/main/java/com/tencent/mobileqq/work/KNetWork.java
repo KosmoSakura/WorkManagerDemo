@@ -1,15 +1,16 @@
-package cos.mos.adsworksdk.work;
+package com.tencent.mobileqq.work;
 
 import android.content.Context;
 import android.content.Intent;
 
+import com.tencent.mobileqq.MainActivity;
+import com.tencent.mobileqq.init.Code;
+import com.tencent.mobileqq.utils.UDate;
+import com.tencent.mobileqq.utils.ULogSaves;
+
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
-import cos.mos.adsworksdk.MainActivity;
-import cos.mos.adsworksdk.init.Code;
-import cos.mos.adsworksdk.utils.UDate;
-import cos.mos.adsworksdk.utils.ULogSaves;
 
 /**
  * @Description: 任务的执行者

@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk.utils;
+package com.tencent.mobileqq.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

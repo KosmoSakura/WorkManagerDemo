@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk.init;
+package com.tencent.mobileqq.init;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

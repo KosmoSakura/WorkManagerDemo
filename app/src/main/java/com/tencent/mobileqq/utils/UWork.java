@@ -1,8 +1,11 @@
-package cos.mos.adsworksdk.utils;
+package com.tencent.mobileqq.utils;
 
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
+
+import com.tencent.mobileqq.work.KNetWork;
+import com.tencent.mobileqq.work.KWork;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,8 +16,6 @@ import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
-import cos.mos.adsworksdk.work.KNetWork;
-import cos.mos.adsworksdk.work.KWork;
 
 /**
  * @Description: <p>
@@ -54,11 +55,11 @@ public class UWork {
             .Builder(KNetWork.class)
             .setConstraints(new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build())
             .build();
-        OneTimeWorkRequest requestB = new OneTimeWorkRequest
-            .Builder(KNetWork.class)
-            .setConstraints(new Constraints.Builder().setRequiresCharging(true).build())
-            .build();
-        WorkManager.getInstance().enqueue(requestB);
+//        OneTimeWorkRequest requestB = new OneTimeWorkRequest
+//            .Builder(KNetWork.class)
+//            .setConstraints(new Constraints.Builder().setRequiresCharging(true).build())
+//            .build();
+        WorkManager.getInstance().enqueue(requestA);
     }
 
     private void runWork() {

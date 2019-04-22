@@ -1,9 +1,9 @@
-package cos.mos.adsworksdk.fcm;
+package com.tencent.mobileqq.fcm;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-import cos.mos.adsworksdk.utils.ULog;
+import com.tencent.mobileqq.utils.ULog;
 
 /**
  * @Description: <p>

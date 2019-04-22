@@ -1,11 +1,11 @@
-package cos.mos.adsworksdk.shell;
+package com.tencent.mobileqq.shell;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
-import cos.mos.adsworksdk.utils.ULogSaves;
+import com.tencent.mobileqq.utils.ULogSaves;
 
 
 /**
@@ -19,10 +19,12 @@ public class TryReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent == null) {
+            ULogSaves.write("intent为空");
             return;
         }
         String action = intent.getAction();
         if (action == null) {
+            ULogSaves.write("action为空");
             return;
         }
         switch (action) {

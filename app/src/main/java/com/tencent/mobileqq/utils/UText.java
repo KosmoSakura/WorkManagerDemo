@@ -1,4 +1,4 @@
-package cos.mos.adsworksdk.utils;
+package com.tencent.mobileqq.utils;
 
 import android.graphics.Paint;
 import android.text.Editable;
