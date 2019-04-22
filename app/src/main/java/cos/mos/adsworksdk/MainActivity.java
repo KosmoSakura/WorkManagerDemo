@@ -5,11 +5,17 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import cos.mos.adsworksdk.utils.ULog;
 import cos.mos.adsworksdk.utils.ULogSaves;
 import cos.mos.adsworksdk.utils.UWork;
 
@@ -38,10 +44,33 @@ public class MainActivity extends AppCompatActivity {
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
 //        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
 //        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+        FirebaseInstanceId.getInstance().getInstanceId()
+            .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                @Override
+                public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                    if (!task.isSuccessful()) {
+                        log("获取令牌失败：" + task.getException());
+                        return;
+                    }
+                    InstanceIdResult result = task.getResult();
+                    if (result == null) {
+                        log("result为空");
+                        return;
+                    }
+                    // Get new Instance ID token
+                    String token = task.getResult().getToken();
+                    log("获取的Token为：" + token);
+                    // Log and toast
+                }
+            });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    private void log(String str) {
+        ULog.commonD("Main:" + str);
     }
 }
